@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 //my stuff
 using System.Net.Http;
 using System.Net.Http.Headers;
+
+
 namespace apiDev
 {
     class twitterAPI
     {
         private static HttpClient client;
+        private static requestData requestData;
 
-        public twitterAPI()
+
+        private static void initTwitterAPI()
         {
             client = new HttpClient();
 
@@ -25,19 +29,26 @@ namespace apiDev
 
         public static async Task apiCall()
         {
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, client.BaseAddress);
-            request.Content = new StringContent("some JSON stuff");
-            try
-            {
-                HttpResponseMessage response = await client.SendAsync(request);
-                response.EnsureSuccessStatusCode();
-                string responseBody = await response.Content.ReadAsStringAsync();
+            if (client == null) initTwitterAPI();
 
-                Console.WriteLine(responseBody);
-            }
-            catch(Exception e)
+            //requestBody = new requestData();
+            using (requestData = new requestData())
             {
-                Console.WriteLine(e.Message);
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, client.BaseAddress);
+                request.Content = new StringContent(requestData.createRequest(), Encoding.UTF8, "application/json");
+
+                try
+                {
+                    HttpResponseMessage response = await client.SendAsync(request);
+                    response.EnsureSuccessStatusCode();
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    Console.WriteLine(responseBody);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
         }
 

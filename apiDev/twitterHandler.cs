@@ -10,12 +10,12 @@ namespace apiDev
     {
         public static async Task callTwitter()
         {
-            await twitterAPI.apiCall("https://api.twitter.com/1.1/tweets/search/30day/Tweetbuster2.json");
+            await twitterAPI.apiCall();
         }
 
         public static async Task initAPI()
         {
-            await twitterAPI.obtainBearerToken();
+            //await twitterAPI.obtainBearerToken();
         }
     }
 }

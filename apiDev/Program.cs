@@ -12,8 +12,8 @@ namespace apiDev
     {
         static void Main(string[] args)
         {
-            //twitterHandler.callTwitter().Wait();
-            twitterHandler.initAPI().Wait();
+            twitterHandler.callTwitter().Wait();
+            //twitterHandler.initAPI().Wait();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 
 //my stuff
 using System.Xml;
+using System.Xml.Serialization;
 using DatabaseWrapper;
 using System.IO;
 
@@ -23,31 +24,34 @@ namespace XMLWrapper
 
         public override List<Tweet> retrieveTweetsFromSource()
         {
-            using (XmlReader reader = XmlReader.Create(stream))
+            List<Tweet> temp;
+
+            try
             {
-                while (reader.Read())
-                {
-                    switch (reader.NodeType)
-                    {
-                        case XmlNodeType.Element:
-                            Console.WriteLine("Start Element {0}", reader.Name);
-                            break;
-                        case XmlNodeType.Text:
-                            Console.WriteLine("Text Node: {0}", reader.GetValue());
-                            break;
-                        case XmlNodeType.EndElement:
-                            Console.WriteLine("End Element {0}", reader.Name);
-                            break;
-                        default:
-                            Console.WriteLine("Other node {0} with value {1}",
-                                            reader.NodeType, reader.Value);
-                            break;
-                    }
-                }
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Tweet>));
+                FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
+                temp = xmlSerializer.Deserialize(stream) as List<Tweet>;
+                stream.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
             }
 
-            return null;
+            return temp;
         }
+
+        //public void createXML()
+        //{
+        //    Tweets.Add(new Tweet(0, Topics.Xenophobia, "some random content", "picture.jpg"));
+        //    string path = "sample.xml";
+
+        //    XmlSerializer serial = new XmlSerializer(typeof(List<Tweet>));
+        //    FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
+        //    serial.Serialize(stream, Tweets);
+        //    stream.Close();
+        //}
 
 
 

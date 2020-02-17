@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<filepath path="D:\_GameEngines\tweetbusterAPI\XMLWrapper\content\">
-</filepath>
-
-<Tweet ID="0" Topic="ClimateChange">
-    <Content>
-    #Coronavirus continues to spread and the #ClimateChangeHoax continues, surely even the Snowflakes with their pea brains would realise its a Ponzi Scheme
-    </Content>
-
-    <Photo name="ti86jEZt_400x400.jpeg">
-    </Photo>
-
-</Tweet>
+<?xml version="1.0"?>
+<ArrayOfTweet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Tweet>
+    <ID>0</ID>
+    <Topic>ClimateChange</Topic>
+    <Content>#Coronavirus continues to spread and the #ClimateChangeHoax continues, surely even the Snowflakes with their pea brains would realise its a Ponzi Scheme</Content>
+    <ProfilePicturePath>D:\_GameEngines\tweetbusterAPI\XMLWrapper\content\ti86jEZt_400x400.jpeg</ProfilePicturePath>
+  </Tweet>
+</ArrayOfTweet>

@@ -13,6 +13,7 @@ namespace XMLWrapper
             xmlHandler xml = new xmlHandler();
 
             xml.retrieveTweetsFromSource();
+            //xml.createXML();
         }
     }
 }

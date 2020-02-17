@@ -10,6 +10,11 @@ namespace DatabaseWrapper
         protected List<Tweet> Tweets;
         protected static Random rand;
 
+        public databaseAPI()
+        {
+            Tweets = new List<Tweet>();
+        }
+
         //get random tweet
         public virtual Tweet getTweet()
         {
@@ -66,7 +71,12 @@ namespace DatabaseWrapper
         public String Content;
         public String ProfilePicturePath;
 
-        Tweet(int ID, Topics topic, String content, String ProfilePicturePath)
+        public Tweet()
+        {
+
+        }
+
+        public Tweet(int ID, Topics topic, String content, String ProfilePicturePath)
         {
             this.ID = ID;
             this.Topic = topic;

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Tweet ID="0" Topic="Xenophobia">
+<filepath path="D:\_GameEngines\tweetbusterAPI\XMLWrapper\content\">
+</filepath>
+
+<Tweet ID="0" Topic="ClimateChange">
     <Content>
+    #Coronavirus continues to spread and the #ClimateChangeHoax continues, surely even the Snowflakes with their pea brains would realise its a Ponzi Scheme
     </Content>
 
-    <Path>
-    </Path>
+    <Photo name="ti86jEZt_400x400.jpeg">
+    </Photo>
 
 </Tweet>

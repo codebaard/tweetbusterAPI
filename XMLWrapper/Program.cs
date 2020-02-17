@@ -10,6 +10,9 @@ namespace XMLWrapper
     {
         static void Main(string[] args)
         {
+            xmlHandler xml = new xmlHandler();
+
+            xml.retrieveTweetsFromSource();
         }
     }
 }

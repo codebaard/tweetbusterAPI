@@ -21,9 +21,10 @@ namespace apiDev
         {
             client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://api.twitter.com/1.1/tweets/search/30day/Tweetbuster2.json");
+            //client.BaseAddress = new Uri("https://api.twitter.com/1.1/tweets/search/30day/Tweetbuster2.json");
+            client.BaseAddress = new Uri("https://api.twitter.com/1.1/search/tweets.json");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "AAAAAAAAAAAAAAAAAAAAADFqAQEAAAAAJLtctixbH6iFXRW1p%2FdjTtB7Fmo%3DsO6UHVTdRblcv8rM78ydQvljK4oseEmpRqSjL0INSMijxpOtjk");
 
         }
 

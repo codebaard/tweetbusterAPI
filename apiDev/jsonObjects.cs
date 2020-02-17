@@ -11,17 +11,19 @@ namespace apiDev
 
         public jsonObjects()
         {
-            Query = new query("from:TwitterDev lang:en");
-            MaxResults = new maxResults("100");
-            FromDate = new fromDate("202001010000");
-            ToDate = new toDate("202001312359");
+            //Query = new query("from:TwitterDev lang:en");
+            //MaxResults = new maxResults("100");
+            //FromDate = new fromDate("202001010000");
+            //ToDate = new toDate("202001312359");
+
+            Q = new q("corona");
         }
 
         public query Query;
         public maxResults MaxResults;
         public fromDate FromDate;
         public toDate ToDate;
-
+        public q Q;
     }
 
     public class query
@@ -31,6 +33,16 @@ namespace apiDev
             type = value;
         }
         public string type;
+    }
+
+    public class q
+    {
+        public q(string value)
+        {
+            content = value;
+        }
+
+        public string content;
     }
 
     public class maxResults

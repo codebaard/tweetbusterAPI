@@ -28,7 +28,7 @@ namespace XMLWrapper
             stream = null;
         }
 
-        void initStream()
+        public void initStream()
         {
             try
             {

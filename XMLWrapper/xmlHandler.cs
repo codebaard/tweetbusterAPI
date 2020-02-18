@@ -14,46 +14,49 @@ namespace XMLWrapper
     public class xmlHandler : databaseAPI
     {
         FileStream stream;
-        string path; 
+
+        public string path
+        {
+            get;
+            set;
+        }
 
         public xmlHandler()
         {
-            path = "D:\\_GameEngines\\tweetbusterAPI\\XMLWrapper\\database.xml";
-            stream = new FileStream(path, FileMode.Open);
+            path = "";
+            //path = "D:\\_GameEngines\\tweetbusterAPI\\XMLWrapper\\database.xml";
+            stream = null;
         }
 
-        public override List<Tweet> retrieveTweetsFromSource()
+        void initStream()
         {
-            List<Tweet> temp;
+            try
+            {
+                stream = new FileStream(path, FileMode.OpenOrCreate);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+
+        public override void retrieveTweetsFromSource()
+        {
 
             try
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Tweet>));
-                FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
-                temp = xmlSerializer.Deserialize(stream) as List<Tweet>;
+                this.Tweets = xmlSerializer.Deserialize(stream) as List<Tweet>;
                 stream.Close();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return null;
+
             }
 
-            return temp;
+
         }
-
-        //public void createXML()
-        //{
-        //    Tweets.Add(new Tweet(0, Topics.Xenophobia, "some random content", "picture.jpg"));
-        //    string path = "sample.xml";
-
-        //    XmlSerializer serial = new XmlSerializer(typeof(List<Tweet>));
-        //    FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
-        //    serial.Serialize(stream, Tweets);
-        //    stream.Close();
-        //}
-
-
-
     }
 }

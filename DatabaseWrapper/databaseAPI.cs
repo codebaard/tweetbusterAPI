@@ -12,19 +12,21 @@ namespace DatabaseWrapper
 
         public databaseAPI()
         {
-            Tweets = new List<Tweet>();
+            this.Tweets = new List<Tweet>();
+            rand = new Random();
         }
 
         //get random tweet
         public virtual Tweet getTweet()
         {
-            return Tweets[rand.Next(Tweets.Count)];
+            return this.Tweets[rand.Next(this.Tweets.Count-1)];
         }
 
         //get tweet with ID from List
         public virtual Tweet getTweet(int ID)
         {
-            foreach (Tweet tweet in Tweets){
+            foreach (Tweet tweet in this.Tweets)
+            {
                 if (tweet.ID == ID) return tweet;
             }
 
@@ -36,13 +38,13 @@ namespace DatabaseWrapper
         {
             List<Tweet> temp = new List<Tweet>();
 
-            foreach (Tweet tweet in Tweets)
+            foreach (Tweet tweet in this.Tweets)
             {
                 if (tweet.Topic == topic) temp.Add(tweet);
             }
 
             if (temp.Count == 0) return null;
-            else return temp[rand.Next(temp.Count)];
+            else return temp[rand.Next(temp.Count-1)];
         }
 
         //get tweets with topic XY
@@ -50,7 +52,7 @@ namespace DatabaseWrapper
         {
             List<Tweet> temp = new List<Tweet>();
 
-            foreach (Tweet tweet in Tweets)
+            foreach (Tweet tweet in this.Tweets)
             {
                 if (tweet.Topic == topic) temp.Add(tweet);
             }
@@ -60,13 +62,14 @@ namespace DatabaseWrapper
         }
 
         //retrieve Tweets
-        public abstract List<Tweet> retrieveTweetsFromSource();
+        public abstract void retrieveTweetsFromSource();
 
     }
 
     public class Tweet
     {
         public int ID;
+        public String Username;
         public Topics Topic;
         public String Content;
         public String ProfilePicturePath;
@@ -76,9 +79,10 @@ namespace DatabaseWrapper
 
         }
 
-        public Tweet(int ID, Topics topic, String content, String ProfilePicturePath)
+        public Tweet(int ID, String username, Topics topic, String content, String ProfilePicturePath)
         {
             this.ID = ID;
+            this.Username = username;
             this.Topic = topic;
             this.Content = content;
             this.ProfilePicturePath = ProfilePicturePath;
@@ -89,7 +93,6 @@ namespace DatabaseWrapper
     {
         Xenophobia,
         ClimateChange,
-        Antivaccination,
         Flatearth,
         Chemtrails
     }

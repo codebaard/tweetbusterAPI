@@ -2,8 +2,30 @@
 <ArrayOfTweet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Tweet>
     <ID>0</ID>
+	<Username>Jeremiah Marsh</Username>
     <Topic>ClimateChange</Topic>
     <Content>#Coronavirus continues to spread and the #ClimateChangeHoax continues, surely even the Snowflakes with their pea brains would realise its a Ponzi Scheme</Content>
     <ProfilePicturePath>D:\_GameEngines\tweetbusterAPI\XMLWrapper\content\ti86jEZt_400x400.jpeg</ProfilePicturePath>
   </Tweet>
+  <Tweet>
+    <ID>1</ID>
+	<Username>Börger</Username>
+    <Topic>Xenophobia</Topic>
+    <Content>@lyonanglais @euronews @ErinSaltman @QuilliamF It's time to make Germany for the Germans again ... #AusländerRaus</Content>
+    <ProfilePicturePath>D:\_GameEngines\tweetbusterAPI\XMLWrapper\content\cAO29y5v_400x400.jpg</ProfilePicturePath>
+  </Tweet>  
+  <Tweet>
+    <ID>2</ID>
+	<Username>Think free</Username>
+    <Topic>Chemtrails</Topic>
+    <Content>OPERATION INDIGO SKYFOLD. No matter what the stated reasons are given to those who fly the chemtrail jets, they are always told by their superiors that this ongoing and illegal atmosphere-altering program is being conducted in the interest of NATIONAL SECURITY.#chemtrails #5G</Content>
+    <ProfilePicturePath>D:\_GameEngines\tweetbusterAPI\XMLWrapper\content\Oaavui_P_400x400.jpg</ProfilePicturePath>
+  </Tweet>   
+  <Tweet>
+    <ID>3</ID>
+	<Username>Your true world</Username>
+    <Topic>Flatearth</Topic>
+    <Content>#NASA are LIARS! 100% #FLATEARTH PROOF HERE: https://youtube.com/watch?v=GhRiLP32qfs Monday February 17 2020:3:53:18 PM</Content>
+    <ProfilePicturePath>D:\_GameEngines\tweetbusterAPI\XMLWrapper\content\6Z6PKeXd_400x400.jpg</ProfilePicturePath>
+  </Tweet>    
 </ArrayOfTweet>
